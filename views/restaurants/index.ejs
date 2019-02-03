@@ -1,0 +1,28 @@
+<% include ../partials/header %>
+
+    <div class="abc text-center mb-4">
+      <!--<h1 id="def">Welcome to Restaurant finder!!</h1>-->
+    <p id="def">View your favourite Restaurants from all over the world!!</p>
+      <p>
+        <a class="btn btn-primary btn-large" href="/restaurants/new">Add New Restaurant</a>
+      </p>
+    </div>
+    <div class="container">
+<div class="row text-center mb-4" id="card-grid">     
+        <% restaurants.forEach(function(restaurants){%>
+     <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
+         <div class="card" style="">
+             <img class="card-img-top" src="<%= restaurants.image %>" alt="<%= restaurants.name %>" style="height: 15rem;">
+                 <div class="card-body">
+                      <h5 class="card-title"><%= restaurants.name %></h5>
+                       <a href="/restaurants/<%= restaurants._id %>" class="btn btn-primary">More Info</a>
+            </div>
+        </div>
+     </div>
+   <% }); %>
+</div> 
+</div>
+
+
+
+<% include ../partials/footer %>
