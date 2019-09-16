@@ -9,6 +9,7 @@
   },
   "author": "Aman",
   "license": "ISC",
+  "devDependencies": {},
   "dependencies": {
     "async": "^2.6.1",
     "async-await": "^0.1.40",
