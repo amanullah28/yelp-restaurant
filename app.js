@@ -22,7 +22,16 @@ var express    = require("express"),
         indexRoutes      = require("./routes/index");
    
 const url = process.env.DATABASEURL || "mongodb://localhost/restaurant_app";
-mongoose.connect(url);
+mongoose.connect(url, { 
+    useNewUrlParser: true, 
+    useUnifiedTopology: true,  
+    useCreateIndex: true }, function(err){
+    if(err){
+        console.log(err);
+    } else {
+        console.log("DB CONNECTED!!")
+    }
+}); 
 app.use(bodyParser.urlencoded({extended: true}));
 app.set("view engine", "ejs");
 app.use(express.static(__dirname+"/public"));
