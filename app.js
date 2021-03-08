@@ -5,21 +5,23 @@ var express    = require("express"),
     flash      = require("connect-flash"),
     passport   = require("passport"),
     localStrategy = require("passport-local"),
-    methodOverride = require("method-override"),
-    Restaurant = require("./models/restaurant"),
-    Comment    = require("./models/comment"),
-    User       = require("./models/user");
-    // seedDB     = require("./seeds");
+    methodOverride = require("method-override")
+
+    // db model
+    const User = require("./models/user");
+    
     
     // configure dotenv
-    require('dotenv/config');
+    if(process.env.NODE_ENV!=="production"){
+        require('dotenv/config');
+    }
 
     // Requiring Routes
     var commentRoutes    = require("./routes/comments"),
         restaurantRoutes = require("./routes/restaurants"),
         indexRoutes      = require("./routes/index");
    
-   const url = process.env.DATABASEURL || "mongodb://localhost/restaurant_app";
+const url = process.env.DATABASEURL || "mongodb://localhost/restaurant_app";
 mongoose.connect(url);
 app.use(bodyParser.urlencoded({extended: true}));
 app.set("view engine", "ejs");
