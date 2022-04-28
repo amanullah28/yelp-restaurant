@@ -11,7 +11,7 @@
   "license": "ISC",
   "devDependencies": {},
   "dependencies": {
-    "async": "^2.6.1",
+    "async": "^2.6.4",
     "async-await": "^0.1.40",
     "body-parser": "^1.18.3",
     "cloudinary": "^1.13.2",
